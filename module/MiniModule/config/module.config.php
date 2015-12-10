@@ -50,8 +50,6 @@ return array(
         ),
         'services' => array (
             'config_authentification_form' => include __DIR__.'/authentification.form.config.php',
-    ),      
-    ),
-                
-    
+        ),      
+   ),
 );
