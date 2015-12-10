@@ -44,7 +44,14 @@ return array(
             'MiniModule\Controller\Index' => 'MiniModule\Controller\IndexController',
         )
     ),
-    'services' => array (
-        'config_authentification_form' => include __DIR__.'/authentification.form.comfig.php',
+    'service_manager' => array(
+        'factories' => array(
+            'MiniModule\Form\Authentification' => 'MiniModule\Form\AuthentificationFormFactory'
+        ),
+        'services' => array (
+            'config_authentification_form' => include __DIR__.'/authentification.form.config.php',
     ),      
+    ),
+                
+    
 );

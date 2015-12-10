@@ -1,4 +1,10 @@
 <?php
+ 
+namespace Minimodule\Form;
+ 
+use Zend\Form\Factory;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 class AuthentificationFormFactory implements FactoryInterface{
     public function createService(ServiceLocatorInterface $serviceLocator){
@@ -6,5 +12,5 @@ class AuthentificationFormFactory implements FactoryInterface{
         $factory = new Factory();
         $form = $factory->createForm($config);
         return $form;
-    }
+    } 
 }
