@@ -4,6 +4,7 @@ namespace MiniModule\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+
 /**
  * Class IndexController
  *
@@ -32,9 +33,25 @@ class IndexController extends AbstractActionController
         $form->setAttribute('action', $this->url()->fromRoute('default', array('action' => 'form' )) );
         return array( 'form' => $form ); // ici le viewManager est celui par défaut il est initialisé avec les valeurs retournées
     }
-
+    
+     public function formfilterAction()
+    {
+        $services = $this->getServiceLocator();
+        $form = $services->get('MiniModule\Form\Authentification');
+        if ( $this->getRequest()->isPost() ) {
+            $form->setData( $this->getRequest()->getPost());
+            $filter = new Zend_Filter_Alpha();
+            $filtered = $filter->filter($form);
+                $vm = new ViewModel();
+                $vm->setVariables( $filtered->getData() );
+                $vm->setTemplate('mini-module/index/traite');
+                return $vm;
+        }
+        $form->setAttribute('action', $this->url()->fromRoute('default', array('action' => 'formfilter' )) );
+        return array( 'form' => $form ); // ici le viewManager est celui par défaut il est initialisé avec les valeurs retournées
+    }
     public function traiteAction()
     {
-        return array( 'login' => $_GET['login'] );
+        return array( 'login' => $_GET['login']);
     }
 }

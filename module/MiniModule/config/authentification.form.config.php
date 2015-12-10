@@ -19,7 +19,7 @@ return array(
         array(
             'spec' => array(
                 'type' => 'Zend\Form\Element\Password',
-                'name' => 'pwd',
+                'name' => 'password',
                 'attributes' => array(
                     'size' => '20',
                 ),
@@ -46,11 +46,11 @@ return array(
                     'name' => 'Zend\I18n\Validator\Alpha',
                 ),
             ),
-            'filters' => array(
-                array(
-                  'name' => 'Zend\I18n\Filter\Alpha'
-                ),
-            ),
+            //'filters' => array(
+            //   array(
+            //      'name' => 'Zend\I18n\Filter\Alpha'
+            //    ),
+            //),
         ),
     ),
 );    
