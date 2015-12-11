@@ -2,19 +2,6 @@
 
 return array(
     'elements' => array(
-        // la saisie du login (type text)
-        array(
-            'spec' => array(
-                'type' => 'Zend\Form\Element\Text',
-                'name' => 'login',
-                'attributes' => array(
-                    'size' => '20',
-                ),
-                'options' => array(
-                  'label' => 'Login : ',
-                ),
-            ),
-        ),
         // la saisie du mot de passe (type pwd)
         array(
             'spec' => array(
@@ -37,20 +24,6 @@ return array(
                     'value' => 'Suite',
                 ),
             ),
-        ),
-    ),
-    'input_filter' => array(
-        'login' => array(
-            'validators' => array(
-                array(
-                    'name' => 'Zend\I18n\Validator\Alpha',
-                ),
-            ),
-            //'filters' => array(
-            //   array(
-            //      'name' => 'Zend\I18n\Filter\Alpha'
-            //    ),
-            //),
         ),
     ),
 );    

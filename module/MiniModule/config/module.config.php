@@ -32,7 +32,8 @@ return array(
             '404' => __DIR__ . '/../view/404.phtml',
             'error' => __DIR__ . '/../view/error.phtml',
             'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
-
+            'layout/formAuth' => __DIR__ . '/../view/layout/formAuth.phtml',
+            
             'mini-module/index/index' => __DIR__ . '/../view/index/index.phtml',
             'mini-module/index/form' => __DIR__ . '/../view/index/form.phtml',
             'mini-module/index/formfilter' => __DIR__ . '/../view/index/form.phtml',
